@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+<link rel="stylesheet" href="/css/main.css?v=7.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.2.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.2.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.2.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="1.依赖环境1.1  JDKJDK建议安装1.8以上的版本——不同的Android版本对应的JDK有相应的要求，例如Android5.0 默认jdk1.6编译，Android默认jdk1.7编译。  如果JDK低于SDK默认版本，可能会出现以下问题： 创建项目后，浏览布局文件设计图是会报错 Android N requires the IDE to be running with Java 1.8">
+<meta name="keywords" content="&#x2F;Android  笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android Studio">
+<meta property="og:url" content="http://yoursite.com/2019/07/04/Android-Studio/index.html">
+<meta property="og:site_name" content="清风ㄣ不解语のBlog">
+<meta property="og:description" content="1.依赖环境1.1  JDKJDK建议安装1.8以上的版本——不同的Android版本对应的JDK有相应的要求，例如Android5.0 默认jdk1.6编译，Android默认jdk1.7编译。  如果JDK低于SDK默认版本，可能会出现以下问题： 创建项目后，浏览布局文件设计图是会报错 Android N requires the IDE to be running with Java 1.8">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/2019/07/04/Android-Studio/1-Android%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/07/04/Android-Studio/2-Android%20Studio%E6%97%A5%E5%BF%97%E6%8E%A7%E5%88%B6%E7%BA%A7%E5%88%AB.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/07/04/Android-Studio/3-Android%20Studio%E6%97%A5%E5%BF%97%E8%BF%87%E6%BB%A4%E5%99%A8.jpg">
+<meta property="og:updated_time" content="2019-07-04T15:12:53.774Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android Studio">
+<meta name="twitter:description" content="1.依赖环境1.1  JDKJDK建议安装1.8以上的版本——不同的Android版本对应的JDK有相应的要求，例如Android5.0 默认jdk1.6编译，Android默认jdk1.7编译。  如果JDK低于SDK默认版本，可能会出现以下问题： 创建项目后，浏览布局文件设计图是会报错 Android N requires the IDE to be running with Java 1.8">
+<meta name="twitter:image" content="http://yoursite.com/2019/07/04/Android-Studio/1-Android%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84.jpg">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/2019/07/04/Android-Studio/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Android Studio | 清风ㄣ不解语のBlog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">清风ㄣ不解语のBlog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">记住每一次失败时有心无力的感受，为了更好的自己努力。</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/04/Android-Studio/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="清风ㄣ不解语">
+      <meta itemprop="description" content="好记性不如烂笔头">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="清风ㄣ不解语のBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Android Studio
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-04 22:44:10 / 修改时间：23:12:53" itemprop="dateCreated datePublished" datetime="2019-07-04T22:44:10+08:00">2019-07-04</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">/Android</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+                 阅读次数： 
+                <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+              </span>
+            </span>
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="1-依赖环境"><a href="#1-依赖环境" class="headerlink" title="1.依赖环境"></a>1.依赖环境</h2><h3 id="1-1-JDK"><a href="#1-1-JDK" class="headerlink" title="1.1  JDK"></a>1.1  JDK</h3><pre><code>JDK建议安装1.8以上的版本——不同的Android版本对应的JDK有相应的要求，例如Android5.0 默认jdk1.6编译，Android默认jdk1.7编译。
+
+如果JDK低于SDK默认版本，可能会出现以下问题：</code></pre><ol>
+<li>创建项目后，浏览布局文件设计图是会报错 Android N requires the IDE to be running with Java 1.8 or later。</li>
+<li>编译项目失败，提示错误 com/android/dx/command/dexer/Main：Unsupported major.minor version 52.0。</li>
+<li>运行APP失败，提示错误 compileSdkVersion ‘andriod-24’ requires JDK 1.8 or later to compile。</li>
+</ol>
+<h3 id="1-2-SDK"><a href="#1-2-SDK" class="headerlink" title="1.2  SDK"></a>1.2  SDK</h3><pre><code>SDK是Android应用编译器，提供了APP开发常用的工具集，主要包括：</code></pre><ul>
+<li>build-tools目录，存放各版本Android的各种编译工具。</li>
+<li>docs目录，存放各种开发说明文档。</li>
+<li>extras\android目录，存放兼容低版本的新功能支持库，比如android-support-v4.jar、v7的各种支持库、v13以上兼容库等。</li>
+<li>platforms目录，存放各版本Android的资源文件。</li>
+<li>platform-tool目录与tool目录，存放常用的开发辅助工具（比如数据库管理工具 sqlite3.exe、模拟器管理工具emulator.exe）。</li>
+<li>samples目录，存放各版本Android常用功能的demo源码。</li>
+<li>sources目录，存放各版本Android的API开放接口源码。</li>
+<li>system-images目录，存放模拟器各版本的系统镜像与管理工具。</li>
+</ul>
+<h3 id="1-3-NDK"><a href="#1-3-NDK" class="headerlink" title="1.3   NDK"></a>1.3   NDK</h3><pre><code>NDK是C/C\+\+代码的编译器，该工具包主要是供JNI接口使用，先把C/C\+\+代码编译成so库，再由Java代码通过JNI接口调用so库。</code></pre><h2 id="2-编译项目模块"><a href="#2-编译项目模块" class="headerlink" title="2.编译项目模块"></a>2.编译项目模块</h2><pre><code>Android Studio里的代码没有报错就会自动编译，我们只需要直接运行项目就可以了。如果想要手动重新编译，有以下3种编译方式：</code></pre><ol>
+<li>选择菜单 Build→Make Project，编译整个项目下的所有模块。</li>
+<li>选择菜单 Build→Make Module***，编译指定名称的模块。</li>
+<li>选择菜单 Build→Clean Project，然后选择菜单选择菜单 Build→Rebuild Project，先清理项目，再对整个项目重新编译。</li>
+</ol>
+<h2 id="3-APP的工程结构"><a href="#3-APP的工程结构" class="headerlink" title="3.  APP的工程结构"></a>3.  APP的工程结构</h2><pre><code>Android Studio里Android视图（下图是HelloWorld工程目录结构图）</code></pre><p><img src="1-Android%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84.jpg" alt></p>
+<h3 id="3-1-工程目录说明"><a href="#3-1-工程目录说明" class="headerlink" title="3.1 工程目录说明"></a>3.1 工程目录说明</h3><pre><code>从结构图看到该工程下面有两个目录：aap与Gradle Scripts。其中，app目录下4个子目录功能说明如下：</code></pre><ol>
+<li>manifests子目录，下面只有一个xml文件，即AndroidManifest.xml，是APP的运行配置文件。</li>
+<li>java子目录，下面有3个com.example.helloworld包，其中第一个包存放的是APP工程的Java源代码，后面两个包存放的是测试用的Java代码。</li>
+<li>generatedJava子目录，个人暂时不清楚这个子目录的功能，没查到相关资料。</li>
+<li>res子目录，存放的是APP工程的资源文件。人生子目录下又有4个子目录：</li>
+</ol>
+<ul>
+<li><p>drawable目录存放的是图形描述文件与用户图片。</p>
+</li>
+<li><p>layout目录存放的是APP页面的布局文件。</p>
+</li>
+<li><p>mipmap目录存放的是启动图标。</p>
+</li>
+<li><p>values存放的是一些常量定义文件（比如字符串常量string.xml、像素常量dimens.xml、颜色常量color.xml、风格样式定义styles.xml等）。</p>
+<p>   Gradle Scripts下面主要是工程的编译配置文件，主要有：</p>
+</li>
+</ul>
+<ol>
+<li>build.gradle，该文件分为项目级与模块级两种，用于描述APP工程的编译规则。</li>
+<li>proguard-rules.pro，该文件用于描述Java文件的代码混淆规则。</li>
+<li>gradle.properties，该文件用于配置编译工程的命令行参数，一般无需改动。</li>
+<li>setting.gradle，配置哪些模块在一起编译。初始内容为  include  ‘:app’，表示只编译APP模块。</li>
+<li>local.properties，项目的本地配置，一般无需改动。该文件是在工程编译时自动生成的，用于描述开发者本机的配置环境（比如SDK的本地路径、NDK的本地路径）。</li>
+</ol>
+<h3 id="3-2-编译配置文件build-gradle"><a href="#3-2-编译配置文件build-gradle" class="headerlink" title="3.2   编译配置文件build.gradle"></a>3.2   编译配置文件build.gradle</h3><pre><code>项目级别的build一般无需改动，只需要关注模块级别的build.gradle。下面是在初始的build.gradle文件中添加注释，以便于理解每个参数的用途。</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">apply plugin: &apos;com.android.application&apos;</span><br><span class="line"></span><br><span class="line">android &#123;</span><br><span class="line">    // 指定编译用的SDK版本号。如28表示使用Android 9.0编译</span><br><span class="line">    compileSdkVersion 28</span><br><span class="line">    // 指定编译工具的版本号。这里的头两位数字必须与compileSdkVersion保持一致，具体的版本号可在sdk安装目录的“sdk\build-tools”下找到</span><br><span class="line">    buildToolsVersion &quot;28.0.3&quot;</span><br><span class="line"></span><br><span class="line">    defaultConfig &#123;</span><br><span class="line">        // 指定该模块的应用编号，即App的包名。该参数为自动生成，无需修改</span><br><span class="line">        applicationId &quot;com.example.helloworld&quot;</span><br><span class="line">        // 指定App适合运行的最小SDK版本号。如16表示至少要在Android 4.1上运行</span><br><span class="line">        minSdkVersion 16</span><br><span class="line">        // 指定目标设备的SDK版本号。即该App最希望在哪个版本的Android上运行</span><br><span class="line">        targetSdkVersion 28</span><br><span class="line">        // 指定App的应用版本号</span><br><span class="line">        versionCode 1</span><br><span class="line">        // 指定App的应用版本名称</span><br><span class="line">        versionName &quot;1.0&quot;</span><br><span class="line">    &#125;</span><br><span class="line">    buildTypes &#123;</span><br><span class="line">        release &#123;</span><br><span class="line">            // 指定是否开启代码混淆功能。true表示开启混淆，false表示无需混淆。</span><br><span class="line">            minifyEnabled false</span><br><span class="line">            // 指定代码混淆规则文件的文件名</span><br><span class="line">            proguardFiles getDefaultProguardFile(&apos;proguard-android.txt&apos;), &apos;proguard-rules.pro&apos;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 指定App编译的依赖信息</span><br><span class="line">dependencies &#123;</span><br><span class="line">    // 指定引用jar包的路径</span><br><span class="line">    implementation fileTree(dir: &apos;libs&apos;, include: [&apos;*.jar&apos;])</span><br><span class="line">    // 指定单元测试编译用的junit版本号</span><br><span class="line">    testImplementation &apos;junit:junit:4.12&apos;</span><br><span class="line">    // 指定编译Android的高版本支持库。如AppCompatActivity必须指定编译appcompat-v7库</span><br><span class="line">    implementation &quot;com.android.support:appcompat-v7:28.0.0&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-3-APP运行配置AndroidManifest-xml"><a href="#3-3-APP运行配置AndroidManifest-xml" class="headerlink" title="3.3    APP运行配置AndroidManifest.xml"></a>3.3    APP运行配置AndroidManifest.xml</h3><pre><code>AndroidManifest\.xml用于指定APP内部的运行配置，是一个XML描述文件，根节点为manifest，根节点的package指定了该APP的包名。manifest下面又有若干子节点，说明如下：</code></pre><ol>
+<li>uses-sdk，该节点有两个属性：android:minSdkVersion和android:targetSdkVersion。（这两个是早期用Eclipse开发APP时使用的，现在这两个字段改成放到build.gradle文件中，所以在Android Studio中不配置uses-sdk也没有问题）</li>
+<li>uses-permission，该节点用于声明APP运行过程中所需要的权限名称（比如，访问网络需要上网权限，拍照需要摄像头权限，定位需要定位权限，等）。</li>
+<li>application，该节点用于指定APP的自身属性，默认的属性说明如下：</li>
+</ol>
+<ul>
+<li>android:allowBackup，用于指定是否允许备份，开发阶段设置为true，上线是设置为false。</li>
+<li>android:icon，用于指定该APP在手机屏幕上显示的图标。</li>
+<li>android:label，用于指定该APP在手机屏幕上显示的名称。</li>
+<li>android:supportsRtl，设置为true表示支持阿拉伯语/波斯语这种从右往左的文字排列顺序。</li>
+<li>android:theme，用于指定该APP的显示风格。</li>
+</ul>
+<p>application节点下还有几个子节点，比如活动activity、服务service、广播接收器receiver、内容提供器provide等，在后面的笔记中会有详细介绍。</p>
+<h2 id="4-日志工具的使用——Log"><a href="#4-日志工具的使用——Log" class="headerlink" title="4.  日志工具的使用——Log"></a>4.  日志工具的使用——Log</h2><pre><code>Android中的日志工具类是Log（android.util.Log），这个类中提供了如下5个方法来供我们打印日志。</code></pre><ul>
+<li>Log.v()。用于打印那些最为琐碎的、意义最小的日志信息。对应级别verbose，是Android日志里面级别最低的一种。</li>
+<li>Log.d()。用于打印一些调试信息，这些信息对你调试程序和分析问题应该是有帮助的。对应级别debug，比verbose高一级。</li>
+<li>Log.i()。用于打印一些比较重要的数据，这些数据应该是你非常想看到的、可以帮你分析用户行为数据。对应级别info，比debug高一级。</li>
+<li>Log.w()。用于打印一些警告信息，提示程序在这个地方可能会有潜在的风险，最好去修复一下这些出现警告的地方。对应级别warm，比info高一级。</li>
+<li>Log.e()。用于打印程序中的错误信息，比如程序进入到了catch语句当中。当有错误信息打印出来的时候，一般都代表你的程序出现严重问题了，必须尽快修复。对应级别error，比wam高一级。</li>
+</ul>
+<p><img src="2-Android%20Studio%E6%97%A5%E5%BF%97%E6%8E%A7%E5%88%B6%E7%BA%A7%E5%88%AB.jpg" alt><br>logcat中主要有5个级别，分别对 应着上面介绍的5个方法。</p>
+<p>快捷输入，在Android Studio中有，比如你想打印一条debug级别 的日志，那么只需要输入logd，然后按下Tab键，就会帮你自动补全一条完整的打印语 句。输入logi，然后按下Tab键，会自动补全一条info级别的打印日志。输入logw，按下 Tab键，会自动补全一条warn级别的打印日志，以此类推。另外，由于Log的所有打印方 法都要求传入一个tag参数，每次写一遍显然太过麻烦。这里还有一个小技巧，我们 在 onCreate() 方法的外面输入logt，然后按下Tab键，这时就会以当前的类名作为值自动生 成一个TAG常量。</p>
+<p>logcat中还能很轻松地添加过滤器（如下图）。</p>
+<p><img src="3-Android%20Studio%E6%97%A5%E5%BF%97%E8%BF%87%E6%BB%A4%E5%99%A8.jpg" alt></p>
+<h2 id="5-Android-Studio快捷键"><a href="#5-Android-Studio快捷键" class="headerlink" title="5.  Android Studio快捷键"></a>5.  Android Studio快捷键</h2><ul>
+<li>Ctrl+S：保存文件</li>
+<li>Ctrl+Z：撤销上次的编辑</li>
+<li>Ctrl+Shift+Z：重做上次的编辑（建议改成Ctrl+Y，与Eclipse、UEStudio等工具保持一致。Android Studio默认Ctrl+Y是删除当前行，当习惯Ctrl+Y重做上次编辑时，Android Studio却删除当前行，非常别扭）</li>
+<li>Ctrl+C：复制</li>
+<li>Ctrl+X：剪切</li>
+<li>Ctrl+V：粘贴</li>
+<li>Ctrl+A：全选</li>
+<li>Delete：删除</li>
+<li>Ctrl+F：查询</li>
+<li>Ctrl+R：替换</li>
+<li>Ctrl+/：注释选中代码（在每行代码前面加双斜杠）</li>
+<li>Ctrl+Shift+/：注释选中代码段（在每行代码前面加“/*”，后面加“*/”）</li>
+<li>Ctrl+Alt+L：格式化选中的代码段。该快捷键与QQ默认的热键（锁定QQ）冲突，更换快捷键或者删除QQ同名热键</li>
+<li>Shift+F6：重命名。建议改为F2，与Windows和Eclipse的使用习惯保持一致</li>
+<li>Alt+Enter：给光标所在的位置的类导入相应的包</li>
+<li>Shift+F10：运行当前模块</li>
+<li>Ctrl+F5：清理并重新运行当前模块</li>
+</ul>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        
+          
+        
+        <div class="post-tags">
+          
+            <a href="/tags/Android-笔记/" rel="tag"># /Android  笔记</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/04/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">清风ㄣ不解语</p>
+              <div class="site-description motion-element" itemprop="description">好记性不如烂笔头</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-依赖环境"><span class="nav-number">1.</span> <span class="nav-text">1.依赖环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-JDK"><span class="nav-number">1.1.</span> <span class="nav-text">1.1  JDK</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-SDK"><span class="nav-number">1.2.</span> <span class="nav-text">1.2  SDK</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-NDK"><span class="nav-number">1.3.</span> <span class="nav-text">1.3   NDK</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-编译项目模块"><span class="nav-number">2.</span> <span class="nav-text">2.编译项目模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-APP的工程结构"><span class="nav-number">3.</span> <span class="nav-text">3.  APP的工程结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-工程目录说明"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 工程目录说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-编译配置文件build-gradle"><span class="nav-number">3.2.</span> <span class="nav-text">3.2   编译配置文件build.gradle</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-APP运行配置AndroidManifest-xml"><span class="nav-number">3.3.</span> <span class="nav-text">3.3    APP运行配置AndroidManifest.xml</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-日志工具的使用——Log"><span class="nav-number">4.</span> <span class="nav-text">4.  日志工具的使用——Log</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-Android-Studio快捷键"><span class="nav-number">5.</span> <span class="nav-text">5.  Android Studio快捷键</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">清风ㄣ不解语</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.2.0</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.2.0"></script>
+
+  <script src="/js/motion.js?v=7.2.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.2.0"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.2.0"></script>
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.2.0"></script>
+<script src="/js/post-details.js?v=7.2.0"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.2.0"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
+</html>
