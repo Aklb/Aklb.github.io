@@ -94,17 +94,20 @@
 
 
 
-  <meta name="description" content="心之所向，素履以航；生如逆旅，一苇以航。">
-<meta name="keywords" content="Android,笔记,Java，数据结构">
-<meta property="og:type" content="website">
-<meta property="og:title" content="清风ㄣ不解语のBlog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="Android的基本视图和布局，首先是基本视图View类的常用属性和方法，接着是如何使用线性布局LinearLayout，最后介绍滚动视图ScrollView的用法。 视图View的基本属性View是Android的基本视图，所有控件和布局都是由View类直接或间接派生出来的——View类的基本属性和方法是各个控件和布局通用的。  一个丰富的界面总是要由很多个控件组成的，那我们如何才能让各个控件都">
+<meta name="keywords" content="Android基础，笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="简单布局">
+<meta property="og:url" content="http://yoursite.com/2019/07/21/简单布局/index.html">
 <meta property="og:site_name" content="清风ㄣ不解语のBlog">
-<meta property="og:description" content="心之所向，素履以航；生如逆旅，一苇以航。">
+<meta property="og:description" content="Android的基本视图和布局，首先是基本视图View类的常用属性和方法，接着是如何使用线性布局LinearLayout，最后介绍滚动视图ScrollView的用法。 视图View的基本属性View是Android的基本视图，所有控件和布局都是由View类直接或间接派生出来的——View类的基本属性和方法是各个控件和布局通用的。  一个丰富的界面总是要由很多个控件组成的，那我们如何才能让各个控件都">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/2019/07/21/简单布局/1-%E5%B8%83%E5%B1%80%E5%92%8C%E6%8E%A7%E4%BB%B6%E7%9A%84%E5%85%B3%E7%B3%BB.jpg">
+<meta property="og:updated_time" content="2019-07-21T12:00:11.628Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="清风ㄣ不解语のBlog">
-<meta name="twitter:description" content="心之所向，素履以航；生如逆旅，一苇以航。">
+<meta name="twitter:title" content="简单布局">
+<meta name="twitter:description" content="Android的基本视图和布局，首先是基本视图View类的常用属性和方法，接着是如何使用线性布局LinearLayout，最后介绍滚动视图ScrollView的用法。 视图View的基本属性View是Android的基本视图，所有控件和布局都是由View类直接或间接派生出来的——View类的基本属性和方法是各个控件和布局通用的。  一个丰富的界面总是要由很多个控件组成的，那我们如何才能让各个控件都">
+<meta name="twitter:image" content="http://yoursite.com/2019/07/21/简单布局/1-%E5%B8%83%E5%B1%80%E5%92%8C%E6%8E%A7%E4%BB%B6%E7%9A%84%E5%85%B3%E7%B3%BB.jpg">
 
 
 
@@ -112,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/21/简单布局/">
 
 
 
@@ -122,7 +125,7 @@
   };
 </script>
 
-  <title>清风ㄣ不解语のBlog</title>
+  <title>简单布局 | 清风ㄣ不解语のBlog</title>
   
 
 
@@ -170,8 +173,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -213,7 +215,7 @@
         
         
           
-          <li class="menu-item menu-item-home menu-item-active">
+          <li class="menu-item menu-item-home">
 
     
     
@@ -273,9 +275,9 @@
           
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -307,10 +309,8 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/07/21/简单布局/" class="post-title-link" itemprop="url">简单布局</a>
+          <h1 class="post-title" itemprop="name headline">简单布局
+
               
             
           </h1>
@@ -371,187 +371,13 @@
           
 
           
-
-          <br>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              Android的基本视图和布局，首先是基本视图View类的常用属性和方法，接着是如何使用线性布局LinearLayout，最后介绍滚动视图ScrollView的用法。
-视图View的基本属性View是Android的基本视图，所有控件和布局都是由View类直接或间接派生出来的——View类的基本属性
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/07/21/简单布局/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/05/屏幕显示/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="清风ㄣ不解语">
-      <meta itemprop="description" content="心之所向，素履以航；生如逆旅，一苇以航。">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="清风ㄣ不解语のBlog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/07/05/屏幕显示/" class="post-title-link" itemprop="url">屏幕显示</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-
-          
-          
-          
-
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="fa fa-eye"></i>
+                 阅读次数： 
+                <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-07-05 09:43:48" itemprop="dateCreated datePublished" datetime="2019-07-05T09:43:48+08:00">2019-07-05</time>
             </span>
-          
-
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-07-21 18:24:10" itemprop="dateModified" datetime="2019-07-21T18:24:10+08:00">2019-07-21</time>
-              </span>
-            
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
           
 
           <br>
@@ -574,37 +400,116 @@
       
 
       
-        
-          
-            <p>
-              像素Android支持的像素单位有：px（像素）、in（英寸）、mm（毫米）、pt（磅，1/27英寸）、dp（与设备无关的显示单位）、dip（就是dp）、sp（用于设置字体的大小）。
-常用的有：px、dp、sp
+        <p>Android的基本视图和布局，首先是基本视图View类的常用属性和方法，接着是如何使用线性布局LinearLayout，最后介绍滚动视图ScrollView的用法。</p>
+<h1 id="视图View的基本属性"><a href="#视图View的基本属性" class="headerlink" title="视图View的基本属性"></a>视图View的基本属性</h1><p>View是Android的基本视图，所有控件和布局都是由View类直接或间接派生出来的——View类的基本属性和方法是各个控件和布局通用的。</p>
+<blockquote>
+<p>一个丰富的界面总是要由很多个控件组成的，那我们如何才能让各个控件都有条不紊地摆放<br>在界面上，而不是乱糟糟的呢？这就需要借助布局来实现了。布局是一种可用于放置很多控件的<br>容器，它可以按照一定的规律调整内部控件的位置，从而编写出精美的界面。当然，布局的内部<br>除了放置控件外，也可以放置布局，通过多层布局的嵌套，我们就能够完成一些比较复杂的界面<br>实现，图 3.15很好地展示了它们之间的关系。（《第一行代码(第二版)》）</p>
+</blockquote>
+<p><img src="1-%E5%B8%83%E5%B1%80%E5%92%8C%E6%8E%A7%E4%BB%B6%E7%9A%84%E5%85%B3%E7%B3%BB.jpg" alt></p>
+<p>视图在XML布局文件中常用的属性定义说明：</p>
+<ul>
+<li><p><strong>id：指定该视图的编号</strong></p>
+</li>
+<li><p><strong>layout_width：指定该视图的高度</strong></p>
+<ol>
+<li>可以是具体的dp数值</li>
+<li>可以是match_parent：<strong>表示与上级视图一样宽</strong></li>
+<li>也可以是warp_content：<strong>表示与内部内容一样宽（内部内容若超过上级视图的宽度，则该视图保持与上级视图一样宽，超出宽度的内容的进行滚动才能显示出来）</strong></li>
+</ol>
+</li>
+<li><p><strong>layout_height：指定该视图的高度。取值同layout_width</strong></p>
+</li>
+<li><p><strong>layout_margin：指定该视图与周围视图之间的空白距离（包括上下左右）</strong></p>
+<p>另有layout_marginTop、layout_marginBottom、layout_marginLeft、layout_marginRight分别表示单独指定视图与上边、下边、左边、右边视图的距离。</p>
+</li>
+<li><p><strong>minWidth：指定该视图的最小宽度</strong></p>
+</li>
+<li><p><strong>minHeight：指定该视图的最小高度</strong></p>
+</li>
+<li><p><strong>background：指定该视图的背景——可以是颜色，也可以是图片</strong></p>
+</li>
+<li><p><strong>layout_gravity：指定该视图与上级视图的对齐方式。对齐方式的取值说明见下表，<u>若同时使用多种对齐方式，则需要使用竖线“|”把多种对齐方式拼接起来</u></strong></p>
+<p><strong>对齐方式的取值说明</strong></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center"><center>XML中的对齐方式</center></th>
+<th align="center"><center>Gravity类中的对齐方式</center></th>
+<th align="center"><center>说明</center></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><center>left</center></td>
+<td align="center"><center>LEFT</center></td>
+<td align="center"><center>靠左对齐</center></td>
+</tr>
+<tr>
+<td align="center"><center>right</center></td>
+<td align="center"><center>RIGHT</center></td>
+<td align="center"><center>靠右对齐</center></td>
+</tr>
+<tr>
+<td align="center"><center>top</center></td>
+<td align="center"><center>TOP</center></td>
+<td align="center"><center>向上对齐</center></td>
+</tr>
+<tr>
+<td align="center"><center>bottom</center></td>
+<td align="center"><center>BOTTOM</center></td>
+<td align="center"><center>向下对齐</center></td>
+</tr>
+<tr>
+<td align="center"><center>center</center></td>
+<td align="center"><center>CENTER</center></td>
+<td align="center"><center>居中对齐</center></td>
+</tr>
+<tr>
+<td align="center"><center>center_horizontal</center></td>
+<td align="center"><center>CENTER_HORIZONTAL</center></td>
+<td align="center"><center>水平方向居中对齐</center></td>
+</tr>
+<tr>
+<td align="center"><center>center_vertical</center></td>
+<td align="center"><center>CENTER_VERTICAL</center></td>
+<td align="center"><center>垂直方向居中对齐</center></td>
+</tr>
+</tbody></table>
+<ul>
+<li><p><strong>padding：指定该视图边缘与内部内容之间的空白距离</strong></p>
+<p>另有paddingTop、paddingBottom、paddingLeft、paddingRight分别表示指定视图边缘与内容上边、下边、左边、右边的距离。</p>
+</li>
+<li><p><strong>visibility：指定该视图的可视类型。可视类型的取值说明见下表</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center"><center>XML中的可视类型</center></th>
+<th align="center"><center>View类中的可视类型</center></th>
+<th align="center"><center>说明</center></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><center>visible</center></td>
+<td align="center"><center>VISIBLE</center></td>
+<td align="center"><center>可见。默认值</center></td>
+</tr>
+<tr>
+<td align="center"><center>invisible</center></td>
+<td align="center"><center>INVISIBLE</center></td>
+<td align="center"><center>不可见。虽然看不到但占着位置</center></td>
+</tr>
+<tr>
+<td align="center"><center>gone</center></td>
+<td align="center"><center>GONE</center></td>
+<td align="center"><center>消失。不仅看不到而且不占位置</center></td>
+</tr>
+</tbody></table>
+<p>下面是视图在代码中常用的设置方法说明：</p>
+</li>
+<li></li>
+</ul>
 
-
-
-单位
-说明
-
-
-
-px
-是手机上可显示的最小单位，与物理设备有关
-
-
-dp
-与物理
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/07/05/屏幕显示/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
       
     </div>
 
@@ -625,198 +530,39 @@ dp
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/04/Android-Studio/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="清风ㄣ不解语">
-      <meta itemprop="description" content="心之所向，素履以航；生如逆旅，一苇以航。">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="清风ㄣ不解语のBlog">
-    </span>
-
-    
-      <header class="post-header">
-
         
+          
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/07/04/Android-Studio/" class="post-title-link" itemprop="url">Android Studio</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-
+        <div class="post-tags">
           
+            <a href="/tags/Android基础，笔记/" rel="tag"># Android基础，笔记</a>
           
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-07-04 22:44:10" itemprop="dateCreated datePublished" datetime="2019-07-04T22:44:10+08:00">2019-07-04</time>
-            </span>
-          
-
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-07-05 09:38:38" itemprop="dateModified" datetime="2019-07-05T09:38:38+08:00">2019-07-05</time>
-              </span>
-            
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          <br>
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          
-            <p>
-              依赖环境JDKJDK建议安装1.8以上的版本——不同的Android版本对应的JDK有相应的要求，例如Android5.0 默认jdk1.6编译，Android默认jdk1.7编译。
-
-如果JDK低于SDK默认版本，可能会出现以下问题：
-创建项目后，浏览布局文件设计图是会报错 Android N r
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/07/04/Android-Studio/#more" rel="contents">
-                阅读全文 &raquo;
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/05/屏幕显示/" rel="next" title="屏幕显示">
+                <i class="fa fa-chevron-left"></i> 屏幕显示
               </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
+            
+          </div>
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -826,14 +572,15 @@ dp
   </article>
 
 
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -853,8 +600,17 @@ dp
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -940,6 +696,23 @@ dp
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#视图View的基本属性"><span class="nav-number">1.</span> <span class="nav-text">视图View的基本属性</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -1096,6 +869,10 @@ dp
 
 
   
+  <script src="/js/scrollspy.js?v=7.2.0"></script>
+<script src="/js/post-details.js?v=7.2.0"></script>
+
+
 
   
 
@@ -1111,6 +888,8 @@ dp
 
   
 
+
+  
 
 
   
