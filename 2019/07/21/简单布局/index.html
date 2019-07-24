@@ -105,7 +105,7 @@
 <meta property="og:image" content="http://yoursite.com/2019/07/21/简单布局/1-%E5%B8%83%E5%B1%80%E5%92%8C%E6%8E%A7%E4%BB%B6%E7%9A%84%E5%85%B3%E7%B3%BB.jpg">
 <meta property="og:image" content="http://yoursite.com/2019/07/21/简单布局/2-margin%E5%92%8Cpadding%E7%9A%84%E6%BC%94%E7%A4%BA%E5%9B%BE.jpg">
 <meta property="og:image" content="http://yoursite.com/2019/07/21/简单布局/3-%E5%B8%B8%E7%94%A8%E6%8E%A7%E4%BB%B6%E5%92%8C%E5%B8%83%E5%B1%80%E7%9A%84%E7%BB%A7%E6%89%BF%E7%BB%93%E6%9E%84.jpg">
-<meta property="og:updated_time" content="2019-07-21T14:40:10.838Z">
+<meta property="og:updated_time" content="2019-07-24T13:28:46.973Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="简单布局">
 <meta name="twitter:description" content="Android的基本视图和布局，首先是基本视图View类的常用属性和方法，接着是如何使用线性布局LinearLayout，最后介绍滚动视图ScrollView的用法。 视图View的基本属性View是Android的基本视图，所有控件和布局都是由View类直接或间接派生出来的——View类的基本属性和方法是各个控件和布局通用的。  一个丰富的界面总是要由很多个控件组成的，那我们如何才能让各个控件都">
@@ -337,13 +337,23 @@
                 
               
 
-              <time title="创建时间：2019-07-21 18:26:20 / 修改时间：22:40:10" itemprop="dateCreated datePublished" datetime="2019-07-21T18:26:20+08:00">2019-07-21</time>
+              <time title="创建时间：2019-07-21 18:26:20" itemprop="dateCreated datePublished" datetime="2019-07-21T18:26:20+08:00">2019-07-21</time>
             </span>
           
 
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-24 21:28:46" itemprop="dateModified" datetime="2019-07-24T21:28:46+08:00">2019-07-24</time>
+              </span>
             
           
 
@@ -566,7 +576,24 @@
 <li><p><strong>removeView：从布局中删除指定视图</strong></p>
 </li>
 <li><p><strong>removeAllView：删除该布局下的所有视图</strong></p>
-<h1 id="线性布局LinearLayout"><a href="#线性布局LinearLayout" class="headerlink" title="线性布局LinearLayout"></a>线性布局LinearLayout</h1></li>
+<h1 id="线性布局LinearLayout"><a href="#线性布局LinearLayout" class="headerlink" title="线性布局LinearLayout"></a>线性布局LinearLayout</h1><p>LinearLayout是最最常用的布局，名字叫线性布局。LinearLayout下面的子视图，就像用一根线串起来，所以LinearLayout内部视图的排列都是有序的，要么从上往下依次垂直排列，要么从左到右依次水平排列。LinearLayout除了继承View/ViewGroup类的所有属性和方法外，还有其特有的属性，说明如下：</p>
+<ul>
+<li><p><strong>orientation：指定线性布局的方向。</strong></p>
+<ol>
+<li><p>horizontal：表示水平布局</p>
+</li>
+<li><p>vertical：表示垂直布局</p>
+<p><strong><u>注意：如果不指定该属性，默认的是vertical</u></strong></p>
+</li>
+</ol>
+</li>
+<li><p><strong>gravity：指定布局内部视图与本线性布局的对齐方式。取值说明同layout_gravity</strong></p>
+</li>
+<li><p><strong>layout_weight：指定当前视图与的宽或高占上级线性布局的权重。</strong></p>
+</li>
+<li></li>
+</ul>
+</li>
 </ul>
 
       
