@@ -95,17 +95,22 @@
 
 
   <meta name="description" content="线程的基本用法？ 继承的方式 比如说，定义一个线程只需要新建一个类继承自Thread，然后重写父类的run()方法，并在里面编写耗时逻辑即可，如下所示： 123456class MyThread extends Thread &amp;#123;    @Override    public void run() &amp;#123;        // 处理具体的逻辑    &amp;#125;&amp;#125;  启动这个">
-<meta name="keywords" content="Android,笔记,面试">
+<meta name="keywords" content="Android,面试,笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android-面试常问基础知识点（二）">
 <meta property="og:url" content="http://yoursite.com/2019/08/28/Android-面试常问基础知识点（二）/index.html">
 <meta property="og:site_name" content="清风ㄣ不解语のBlog">
 <meta property="og:description" content="线程的基本用法？ 继承的方式 比如说，定义一个线程只需要新建一个类继承自Thread，然后重写父类的run()方法，并在里面编写耗时逻辑即可，如下所示： 123456class MyThread extends Thread &amp;#123;    @Override    public void run() &amp;#123;        // 处理具体的逻辑    &amp;#125;&amp;#125;  启动这个">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-28T04:25:02.716Z">
+<meta property="og:image" content="http://yoursite.com/2019/08/28/Android-面试常问基础知识点（二）/1-%E5%BC%82%E6%AD%A5%E6%B6%88%E6%81%AF%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6%E6%B5%81%E7%A8%8B%E7%A4%BA%E6%84%8F%E5%9B%BE.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/08/28/Android-面试常问基础知识点（二）/2-MVC.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/08/28/Android-面试常问基础知识点（二）/3-MVP.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/08/28/Android-面试常问基础知识点（二）/4-MVVM.jpg">
+<meta property="og:updated_time" content="2019-08-28T14:57:19.576Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android-面试常问基础知识点（二）">
 <meta name="twitter:description" content="线程的基本用法？ 继承的方式 比如说，定义一个线程只需要新建一个类继承自Thread，然后重写父类的run()方法，并在里面编写耗时逻辑即可，如下所示： 123456class MyThread extends Thread &amp;#123;    @Override    public void run() &amp;#123;        // 处理具体的逻辑    &amp;#125;&amp;#125;  启动这个">
+<meta name="twitter:image" content="http://yoursite.com/2019/08/28/Android-面试常问基础知识点（二）/1-%E5%BC%82%E6%AD%A5%E6%B6%88%E6%81%AF%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6%E6%B5%81%E7%A8%8B%E7%A4%BA%E6%84%8F%E5%9B%BE.jpg">
 
 
 
@@ -333,7 +338,7 @@
                 
               
 
-              <time title="创建时间：2019-08-28 11:20:09 / 修改时间：12:25:02" itemprop="dateCreated datePublished" datetime="2019-08-28T11:20:09+08:00">2019-08-28</time>
+              <time title="创建时间：2019-08-28 11:20:09 / 修改时间：22:57:19" itemprop="dateCreated datePublished" datetime="2019-08-28T11:20:09+08:00">2019-08-28</time>
             </span>
           
 
@@ -423,6 +428,60 @@
 
 </li>
 </ol>
+<h1 id="Handler-的原理（异步消息处理机制）？"><a href="#Handler-的原理（异步消息处理机制）？" class="headerlink" title="Handler 的原理（异步消息处理机制）？"></a>Handler 的原理（异步消息处理机制）？</h1><p>Android 中主线程是不能进行耗时操作的，子线程是不能进行更新 UI 的。所以就有了Handler，它的作用就是实现线程之间的通信。</p>
+<p>Handler 整个流程中，主要有四个对象，Handler，Message,MessageQueue,Looper。当应用创建的时候，就会在主线程中创建 Handler 对象，我们通过要传送的消息保存到 Message 中，handler 通过调用 sendMessage 方法将 Message发送到 MessageQueue 中，Looper 对象就会不断的调用 loop()方法。</p>
+<p>不断的从 MessageQueue 中取出 Message 交给 Handler 进行处理。从而实现线程之间的通<br>信。</p>
+<p><img src="1-%E5%BC%82%E6%AD%A5%E6%B6%88%E6%81%AF%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6%E6%B5%81%E7%A8%8B%E7%A4%BA%E6%84%8F%E5%9B%BE.jpg" alt></p>
+<h1 id="内存泄露原因及解决方式？"><a href="#内存泄露原因及解决方式？" class="headerlink" title="内存泄露原因及解决方式？"></a>内存泄露原因及解决方式？</h1><ol>
+<li><p><strong>Handler 引起的内存泄漏。</strong></p>
+<p><strong>解决：</strong>将 Handler 声明为静态内部类，就不会持有外部类 SecondActivity 的引用，其生命周<br>期就和外部类无关，如果 Handler 里面需要 context 的话，可以通过弱引用方式引用外部类。</p>
+</li>
+<li><p><strong>单例模式引起的内存泄漏。</strong></p>
+<p><strong>解决：</strong>Context 是 ApplicationContext，由于 ApplicationContext 的生命周期是和 app 一致<br>的，不会导致内存泄漏</p>
+</li>
+<li><p><strong>非静态内部类创建静态实例引起的内存泄漏。</strong></p>
+<p><strong>解决：</strong>把内部类修改为静态的就可以避免内存泄漏了</p>
+</li>
+<li><p><strong>非静态匿名内部类引起的内存泄漏。</strong></p>
+<p><strong>解决</strong>：将匿名内部类设置为静态的。</p>
+</li>
+<li><p><strong>注册/反注册未成对使用引起的内存泄漏。</strong></p>
+<p> <strong>解决</strong>：注册广播接受器、EventBus 等，记得解绑。</p>
+</li>
+<li><p><strong>资源对象没有关闭引起的内存泄漏。</strong></p>
+<p><strong>解决</strong>：在这些资源不使用的时候，记得调用相应的类似 close()、destroy()、recycler()、<br>release()等方法释放。</p>
+</li>
+<li><p><strong>集合对象没有及时清理引起的内存泄漏。</strong></p>
+<p><strong>解决</strong>：通常会把一些对象装入到集合中，当不使用的时候一定要记得及时清理集合，让相关对象不再被引用。</p>
+</li>
+</ol>
+<h1 id="Fragment-与-与-Fragment-、Activity-通信的方式？"><a href="#Fragment-与-与-Fragment-、Activity-通信的方式？" class="headerlink" title="Fragment 与 与 Fragment 、Activity 通信的方式？"></a>Fragment 与 与 Fragment 、Activity 通信的方式？</h1><ol>
+<li>直接在一个 Fragment 中调用另外一个 Fragment 中的方法</li>
+<li>使用接口回调</li>
+<li>使用广播</li>
+<li>Fragment 直接调用 Activity 中的 public 方法</li>
+</ol>
+<h1 id="MVC-、MVP和-MVVM？"><a href="#MVC-、MVP和-MVVM？" class="headerlink" title="MVC 、MVP和 MVVM？"></a>MVC 、MVP和 MVVM？</h1><h2 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h2><p><img src="2-MVC.jpg" alt></p>
+<ol>
+<li>View 传送指令到 Controller</li>
+<li>Controller 完成业务逻辑后，要求 Model 改变状态</li>
+<li>Model 将新的数据发送到 View，用户得到反馈，所有通信都是单向的。</li>
+</ol>
+<h2 id="MVP"><a href="#MVP" class="headerlink" title="MVP"></a>MVP</h2><p>MVP 模式将 Controller 改名为 Presenter，同时改变了通信方向。</p>
+<p><img src="3-MVP.jpg" alt></p>
+<ol>
+<li><p>各部分之间的通信，都是双向的。</p>
+</li>
+<li><p>View 与 Model 不发生联系，都通过 Presenter 传递。</p>
+</li>
+<li><p>View 非常薄，不部署任何业务逻辑，称为”被动视图”（Passive View），即没有任何主动性，而 Presenter非常厚，所有逻辑都部署在那里。</p>
+</li>
+</ol>
+<h2 id="MVVM"><a href="#MVVM" class="headerlink" title="MVVM"></a>MVVM</h2><p>MVVM 模式将 Presenter 改名为 ViewModel，基本上与 MVP 模式完全一致。</p>
+<p><img src="4-MVVM.jpg" alt></p>
+<p>唯一的区别是，它采用双向绑定（data-binding）：View的变动，自动反映在 ViewModel，反之亦然。<br>这里面使用的设计模式有：观察者模式（发布订阅模式）、代理模式、工厂模式、单例模式。</p>
+<p><strong>双向绑定</strong></p>
+<p>在 MVVM 中，UI 是通过数据驱动的，数据一旦改变就会相应的刷新对应的 UI，UI 如果改变，也会改变对应的数据。这种方式就可以在业务处理中只关心数据的流转，而无需直接和页面打交道。ViewModel 只关心数据和业务的处理，不关心 View 如何处理数据，在这种情况下，View 和 Model 都可以独立出来，任何一方改变了也不一定需要改变另一方，并且可以将一些可复用的逻辑放在一个 ViewModel 中，让多个 View 复用这个 ViewModel。</p>
 
       
     </div>
@@ -451,9 +510,9 @@
           
             <a href="/tags/Android/" rel="tag"># Android</a>
           
-            <a href="/tags/笔记/" rel="tag"># 笔记</a>
-          
             <a href="/tags/面试/" rel="tag"># 面试</a>
+          
+            <a href="/tags/笔记/" rel="tag"># 笔记</a>
           
         </div>
       
@@ -627,7 +686,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#线程的基本用法？"><span class="nav-number">1.</span> <span class="nav-text">线程的基本用法？</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#线程的基本用法？"><span class="nav-number">1.</span> <span class="nav-text">线程的基本用法？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Handler-的原理（异步消息处理机制）？"><span class="nav-number">2.</span> <span class="nav-text">Handler 的原理（异步消息处理机制）？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#内存泄露原因及解决方式？"><span class="nav-number">3.</span> <span class="nav-text">内存泄露原因及解决方式？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Fragment-与-与-Fragment-、Activity-通信的方式？"><span class="nav-number">4.</span> <span class="nav-text">Fragment 与 与 Fragment 、Activity 通信的方式？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MVC-、MVP和-MVVM？"><span class="nav-number">5.</span> <span class="nav-text">MVC 、MVP和 MVVM？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#MVC"><span class="nav-number">5.1.</span> <span class="nav-text">MVC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MVP"><span class="nav-number">5.2.</span> <span class="nav-text">MVP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MVVM"><span class="nav-number">5.3.</span> <span class="nav-text">MVVM</span></a></li></ol></li></ol></div>
             
 
           </div>
