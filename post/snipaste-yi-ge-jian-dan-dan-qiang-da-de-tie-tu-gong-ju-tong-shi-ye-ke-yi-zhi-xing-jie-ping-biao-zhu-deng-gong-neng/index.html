@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>Snipaste ——一个简单但强大的贴图工具，同时也可以执行截屏、标注等功能。 | 崩登仓仓</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://aklb.github.io//favicon.ico?v=1691487728286">
+<link rel="stylesheet" href="https://aklb.github.io//styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="Snipaste 是一个简单但强大的截图工具，也可以让你将截图贴回到屏幕上！下载并打开 Snipaste，按下 F1 来开始截图，再按 F3，截图就在桌面置顶显示了。就这么简单！
+你还可以将剪贴板里的文字或者颜色信息转化为图片窗口，并且将它..." />
+    <meta name="keywords" content="macOS,WIN" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://aklb.github.io/">
+        <img src="https://aklb.github.io//images/avatar.png?v=1691487728286" class="site-logo">
+        <h1 class="site-title">崩登仓仓</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      WIN、macOS、Android、iOS软件收集
+    </div>
+    <div class="site-footer">
+      Powered by <a href="aklbdr@126.com" target="_blank">E-mail</a> | <a class="rss" href="https://aklb.github.io//atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">Snipaste ——一个简单但强大的贴图工具，同时也可以执行截屏、标注等功能。</h2>
+            <div class="post-date">2023-08-07</div>
+            
+              <div class="feature-container" style="background-image: url('https://aklb.github.io//post-images/snipaste-yi-ge-jian-dan-dan-qiang-da-de-tie-tu-gong-ju-tong-shi-ye-ke-yi-zhi-xing-jie-ping-biao-zhu-deng-gong-neng.jpg')">
+              </div>
+            
+            <div class="post-content" v-pre>
+              <p>Snipaste 是一个简单但强大的截图工具，也可以让你将截图贴回到屏幕上！下载并打开 Snipaste，按下 F1 来开始截图，再按 F3，截图就在桌面置顶显示了。就这么简单！</p>
+<p>你还可以将剪贴板里的文字或者颜色信息转化为图片窗口，并且将它们进行缩放、旋转、翻转、设为半透明，甚至让鼠标能穿透它们！如果你是程序员、设计师，或者是大部分工作时间都在电脑前，贴图功能将改变你的工作方式、提升工作效率。</p>
+<p>Snipaste 使用很简单，但同时也有一些较高级的用法可以进一步提升你的工作效率。感兴趣的话，请抽空读一读用户手册。</p>
+<p>Snipaste 是免费软件，它也很安全，没有广告、不会扫描你的硬盘、更不会上传用户数据，它只做它应该做的事。</p>
+<p>虽然 Snipaste 大部分功能都可以使用鼠标进行操作，但仍有许多非常实用的操作只能通过键盘操作完成，请查看软件内置帮助中的“内置快捷键”。</p>
+<h3 id="把图片作为窗口置顶显示">把图片作为窗口置顶显示</h3>
+<ul>
+<li>
+<p>支持将剪贴板中的以下内容转为图片</p>
+<ul>
+<li>图像</li>
+<li>纯文本</li>
+<li>HTML 文本</li>
+<li>颜色信息</li>
+<li>图像文件：PNG, JPG, BMP, ICO, <strong>GIF</strong> 等</li>
+</ul>
+</li>
+<li>
+<p>图片窗口支持的操作</p>
+<ul>
+<li>缩放 (<code>鼠标滚轮</code> 或者 <code>+</code>/<code>-</code>)<br>
+对于 GIF 图片则是加速/减速</li>
+<li>旋转 (<code>1</code>/<code>2</code>)<br>
+对于 GIF 图片则是 上一帧/下一帧</li>
+<li>镜像翻转 (<code>3</code>/<code>4</code>)</li>
+<li>设置透明度 (<code>Ctrl</code> + <code>鼠标滚轮</code> 或者 <code>Ctrl</code> + <code>+</code>/<code>-</code>)</li>
+<li>鼠标穿透</li>
+<li>缩略图 (<code>Shift</code> + <code>双击</code>)</li>
+<li>图像标注 (<code>空格键</code>)</li>
+<li>隐藏 (<code>左键双击</code>)</li>
+<li>...</li>
+</ul>
+</li>
+<li>
+<p>取色 (<code>Alt</code>)</p>
+</li>
+<li>
+<p>文件拖放</p>
+</li>
+<li>
+<p><strong>贴图分组</strong></p>
+</li>
+<li>
+<p><strong>自动备份、恢复</strong></p>
+<h3 id="方便地标注图像">方便地标注图像</h3>
+<ul>
+<li>
+<p>丰富的画图工具</p>
+<ul>
+<li>矩形</li>
+<li>椭圆</li>
+<li>线条</li>
+<li>箭头</li>
+<li>铅笔</li>
+<li>马克笔</li>
+<li>文字</li>
+</ul>
+</li>
+<li>
+<p>高级标注工具</p>
+<ul>
+<li>马赛克</li>
+<li>高斯模糊</li>
+<li>橡皮擦</li>
+</ul>
+</li>
+<li>
+<p>撤销、重做</p>
+<h3 id="自定义设置">自定义设置</h3>
+<ul>
+<li>主题色、界面字体、通知栏图标等</li>
+<li>快捷键</li>
+<li>丰富的功能性选项</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><a href="https://assets.sayori.moe/snipaste-dl/archives/Snipaste-2.8.5-Beta-x64.zip">Win版下载</a><br>
+<a href="https://assets.sayori.moe/snipaste-dl/archives/Snipaste-2.8.5-Beta.dmg">Mac版下载</a></p>
+<p><a href="https://apps.microsoft.com/store/detail/snipaste-%E6%88%AA%E5%9B%BE%E8%B4%B4%E5%9B%BE/9P1WXPKB68KX?hl=zh-cn&amp;gl=cn&amp;rtc=1">Win版备用下载</a></p>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://aklb.github.io/tag/Ki2RO53IM/" class="tag">
+                    macOS
+                  </a>
+                
+                  <a href="https://aklb.github.io/tag/PE4yI0e8r/" class="tag">
+                    WIN
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://aklb.github.io/post/simpletex-yi-kuan-mian-fei-qie-bian-jie-de-gong-shi-wen-dang-shi-bie-ruan-jian/">
+                  <h3 class="post-title">
+                    SimpleTex 一款免费且便捷的公式/文档识别软件
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>
